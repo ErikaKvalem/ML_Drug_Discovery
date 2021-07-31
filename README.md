@@ -34,6 +34,8 @@ Los datos de bioactividad son valores IC50 (Concentración para la inhibición d
 
 
 
+
+
 2. ANÁLISIS EXPLORATORIO DE LOS DATOS
 
 En esta sección calculo los descriptores  de Lipinski y hago un análisis exploratorio de los datos.
