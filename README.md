@@ -69,5 +69,71 @@ Los descriptores de Lipinski son el peso molecular (Molecular Weight, MW), la so
 
 Uso la función estadística Mann-Whitney U Test función modificada de Machine Learning Mastery
 
+Interpretación de los resultados estadísticos
+
+•	pIC50 values
+
+Mirando los valores de pIC50, las clases active y inactive muestran diferencia estadística significativa, lo cual era de esperar ya que habíamos fijado los valores de umbral previamente para crear las clases. ( IC50 < 1000 nM = Active, IC50 > 10000 nM = Inactive, corresponde a pIC50 > 6 Actives , and pIC50< 5 = Inactives)
+•	Descriptores Lipinski
+
+De los 4 descriptores (Lipinski's descriptors,MW, LogP, NumHDonors, NumHAcceptors) sólo LogP no muestra diferencia estadística significativa entre clases. Los otros 3 descriptores todos mostraron diferencia estadística significativa entre las clases de bioactividad "active" y "inative"
+
+. CÁLCULO DE LOS DESCRIPTORES PUBCHEM FINGERPRINTY PREPARACIÓN DE LOS DATOS PARA ML
+
+En esta parte he calculado unos descriptores que describen las características locales de las moléculas que usaré para construir los modelos de ML. Estos descriptores se llaman descriptores PubChem Fingerprint que describen cuantitativamente los compuestos del dataset. 
+
+Estos son los pasos que he seguido: 
+
+	Descargar el software PaDEL y aplicarlo a los datos. Genera un resultado descriptors_output.csv.
+
+El software PaDEL usa java y un fichero PaDEL_descriptor.jar que ejecuto. Se encarga de limpiar los valores de la variable canonical_smiles que contiene información de la estructura de los compuestos. Elimina las sales Cloro y Socio (Cl, Na) y elimina también los ácidos orgánicos para que no haya impurezas. 
+	Separo los datos en matriz X e Y (target). Elimino el nombre de los compuesto (Name) de la matriz X . Esta matrix contiene los descriptores PubChem Fingerprint. La Y contiene el valor pIC50 de bioactividad. 
+
+CONSTRUIR MODELO SIMPLE D REGRESIÓN RANDOM FOREST
+
+Con la X e Y creadas anteriormente pruebo a construir un modelo de regresión de Random Forest. 
+Estos son los pasos que he seguido: 
+	Elimino las variables con varianza baja.
+	Divido los datos en train (80%) y test (20%) 
+	Creo un modelo con el siguiente código y obtengo un valor de 0.47 para R^2. 
+  
+  5.MODELOS DE REGRESIÓN MACHINE LEARNING
+
+En esta sección voy a construir modelos de ML para los datos de bioactividad para la proteína  Human Acetylcholinesterase basándome en los predictores PubChem Fingerprint. Estos predictores son huellas únicas para cada compuesto que los identifican y les confieren propiedades únicas. Esto es esencial para el desarrollo de fármacos y su diseño.
+
+ La conectividad entre las moléculas da lugar a estructuras únicas del compuesto y también propiedades. Necesitamos encontrar una forma de reajustar dichas moléculas de tal manera que el compuesto final, el fármaco sea lo más potente posible a la vez que lo menos tóxico y más seguro para el consumo. 
+
+El algoritmo de ML aprende de los descriptores PubChem Fingerprint, de las propiedades moleculares únicas de cada compuesto. El objetivo es crear un modelo que sepa distinguir correctamente entre compuesto ACTIVO/INACTIVOS. Así podremos ver que grupos funcionales son esenciales para diseñar un fármaco potente y seguro. Es por eso que la variable dependiente, Y (target) será el valor pIC50 con el que hemos estado trabajando. Este es el valor de la concentración de compuesto necesario para la inhibición del 50% de la proteína. 
+
+Para este propósito he usado la librería Lazypredict que me permite construir 39 algoritmos básicos presentes en scikit-learn simulatenamente. Es importante decir que son entrenado con los parámetro por defecto y que se podría mejorar su rendimiento aplicando optimización de hyperparámetros con GridSearch por ejemplo. 
+
+Conclusiones
+
+El rendimiento de los 39 modelos no es para nada bueno. El mejor predictor es el modelo LGBMRegressor el cual alcanza un valor de R2 de 0.4. Esto puede deberse a que al aplicar Lazypredict estamos usando los parámetros que están establecidos por defecto para los algoritmos. 
+
+Mi estrategia sería aplicar un GridSearch individualmente a los 5 primeros modelos para ver si la predicción mejora. En segundo lugar intentaría encontrar una proteína con mayor cantidad de compuestos (+ 5000 registros) y haría un análisis más exhaustivo de las variables y su importancia. 
+
+Este ha sido un proyecto interesante del que he aprendido mucho aunque creo que la parte biológica  y del EDA me ha ocupado 80% del tiempo del trabajo dejando 20% de dedicación a la parte de ML la cual podría ser mejorada en muchos aspectos. 
+
+Aprendizajes: 
+-	Trabajar en Google Colab
+-	Base de datos ChEMBL
+-	Instalación de rdkit 
+-	Descriptores Lipinski
+-	IC50/pIC50
+-	Man Whitney test estadístico
+-	PubChem fingerprint descriptores 
+-	Software PaDEL
+-	LazyPredict librería
+
+Problemas que he tenido que resolver: 
+-	Incompatibilidad de librerías (ej: scikit-learn y LazyPredict)
+-	Transformación de object a string y a float
+-	Funciones que he usado de internet como Lipinski he tenido que modificarla para que funcoine con mi código
+ 
+
+
+
+
 
 
