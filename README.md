@@ -35,3 +35,38 @@ Los datos de bioactividad son valores IC50 (Concentración para la inhibición d
 
 ![image](https://user-images.githubusercontent.com/39902241/127727051-0edd81c7-9ea1-4fc9-92a4-76fc7cb2fe10.png)
 
+2. ANÁLISIS EXPLORATORIO DE LOS DATOS
+
+En esta sección calculo los descriptores  de Lipinski y hago un análisis exploratorio de los datos.
+
+•	Descriptores de Lipinski
+
+Estos descriptores dan una visión global de las propiedades de las moléculas para saber si pueden ser una buen fármaco para via oral. Christopher Lipinski, es un científico en Pfizer, que estableció una serie de reglas para evaluar la efectividad de un fármaco. Esta efectividad sebasa en el perfil farmacokinetico también conocido como ADME por sus siglas en inglés (Absorption, Distribution, Metabolism, & Extraction). Este científico analizó todos los fármacos activos de via oral aprovado por la FDA americana y estabeció lo que se conoce como the Rule-of-Five of Lipinski's Rule.
+
+The Lipinski's Rule dice lo siguiente:
+•	El peso molecular (MW) <500 Dalton
+•	EL coefficiente de particion Octanol-agua (LogP)<5
+•	Enlaces de hidrogeno donantes <5
+•	Enlaces de hidrógeno aceptadores <10
+
+
+Estos son los pasos que he seguido: 
+1.	Instalo conda en Google Colab e importo la librería rdkit, librería de software libre para química-informática. 
+2.	Calculo los descriptores de Lipinski usando una función modificada de Codeocean
+
+Los descriptores de Lipinski son el peso molecular (Molecular Weight, MW), la solubilidad (LogP) el número de enlaces de hidrogeno cedidos (NumHDonors) y el número de enlaces de hidrógeno acceptados (NumHAcceptors).
+
+3.	Combino los dataframes de la bioactividad con el resultado de los descriptores de Lipinski.
+4.	Fijo los valores de IC50 a un máximo de 100000000 para la posterior transformación usando la función norm_value
+
+
+5.	Convierto el valor IC50 en pIC50 aplicando una transformación logarítmica negativa para lograr una distribución de los datos más uniforme. Uso la función pIC50
+6.	Elimino la clase “intermediate” y me quedo sólo con las clases de compuestos activos e inactivo que había definido previamente.
+7.	Guardo los datos en final_df_ipc50.csv
+
+•	Análisis exploratorio del espacio químico basándome en los descriptores de Lipinski calculados. 
+
+Uso la función estadística Mann-Whitney U Test función modificada de Machine Learning Mastery
+![image](https://user-images.githubusercontent.com/39902241/127727077-df53b0c0-1e3b-400e-93c3-a78808ce8f31.png)
+
+
