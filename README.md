@@ -1,5 +1,11 @@
 # ML_Drug_Discovery
-PROYECTO DE BIOINFORMÁTICA – DESARROLLO COMPUTACIONAL DE FÁRMACOS
+PROYECTO DE BIOINFORMÁTICA Y MACHINE LEARNING – DESARROLLO COMPUTACIONAL DE FÁRMACOS
+
+Estructura repositorio:
+data: Ficheros de datos extraidos durante el proyecto y usados en las distintas fases
+results: Ficheros de resultados extraidos tras los cálculos en el proyecto
+images: Ficheros .jpg y .pdf de. gráficos extraidos tras los cálculos en el proyecto
+
 
 Para el desarrollo de este proyecto me baso en la relación cuantitativa estructura-actividad (Quantitative structure-activity relationship, QSAR). Esto quiere decir que la estructura  química de los compuestos se correlaciona cuantitativamente con la actividad biológica. La actividad biológica es define como la unión de un fármaco con un receptor ( proteína, organismo …)   Permite entender el origen biológico de la actividad e interpretar los modelos QSAR tiene un gran valor e importancia en el desarrollo y diseño de nuevos fármacos
 
@@ -108,7 +114,7 @@ El algoritmo de ML aprende de los descriptores PubChem Fingerprint, de las propi
 
 Para este propósito he usado la librería Lazypredict que me permite construir 39 algoritmos básicos presentes en scikit-learn simulatenamente. Es importante decir que son entrenado con los parámetro por defecto y que se podría mejorar su rendimiento aplicando optimización de hyperparámetros con GridSearch por ejemplo. 
 
-Conclusiones
+CONCLUSIONES
 
 El rendimiento de los 39 modelos no es para nada bueno. El mejor predictor es el modelo LGBMRegressor el cual alcanza un valor de R2 de 0.4. Esto puede deberse a que al aplicar Lazypredict estamos usando los parámetros que están establecidos por defecto para los algoritmos. 
 
