@@ -78,7 +78,7 @@ Mirando los valores de pIC50, las clases active y inactive muestran diferencia e
 
 De los 4 descriptores (Lipinski's descriptors,MW, LogP, NumHDonors, NumHAcceptors) sólo LogP no muestra diferencia estadística significativa entre clases. Los otros 3 descriptores todos mostraron diferencia estadística significativa entre las clases de bioactividad "active" y "inative"
 
-. CÁLCULO DE LOS DESCRIPTORES PUBCHEM FINGERPRINTY PREPARACIÓN DE LOS DATOS PARA ML
+CÁLCULO DE LOS DESCRIPTORES PUBCHEM FINGERPRINTY PREPARACIÓN DE LOS DATOS PARA ML
 
 En esta parte he calculado unos descriptores que describen las características locales de las moléculas que usaré para construir los modelos de ML. Estos descriptores se llaman descriptores PubChem Fingerprint que describen cuantitativamente los compuestos del dataset. 
 
@@ -89,7 +89,7 @@ Estos son los pasos que he seguido:
 El software PaDEL usa java y un fichero PaDEL_descriptor.jar que ejecuto. Se encarga de limpiar los valores de la variable canonical_smiles que contiene información de la estructura de los compuestos. Elimina las sales Cloro y Socio (Cl, Na) y elimina también los ácidos orgánicos para que no haya impurezas. 
 	Separo los datos en matriz X e Y (target). Elimino el nombre de los compuesto (Name) de la matriz X . Esta matrix contiene los descriptores PubChem Fingerprint. La Y contiene el valor pIC50 de bioactividad. 
 
-CONSTRUIR MODELO SIMPLE D REGRESIÓN RANDOM FOREST
+CONSTRUIR MODELO SIMPLE DE REGRESIÓN RANDOM FOREST
 
 Con la X e Y creadas anteriormente pruebo a construir un modelo de regresión de Random Forest. 
 Estos son los pasos que he seguido: 
@@ -97,7 +97,7 @@ Estos son los pasos que he seguido:
 	Divido los datos en train (80%) y test (20%) 
 	Creo un modelo con el siguiente código y obtengo un valor de 0.47 para R^2. 
   
-  5.MODELOS DE REGRESIÓN MACHINE LEARNING
+MODELOS DE REGRESIÓN MACHINE LEARNING
 
 En esta sección voy a construir modelos de ML para los datos de bioactividad para la proteína  Human Acetylcholinesterase basándome en los predictores PubChem Fingerprint. Estos predictores son huellas únicas para cada compuesto que los identifican y les confieren propiedades únicas. Esto es esencial para el desarrollo de fármacos y su diseño.
 
