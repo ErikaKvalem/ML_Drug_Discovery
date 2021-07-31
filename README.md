@@ -3,7 +3,7 @@ PROYECTO DE BIOINFORMÁTICA – DESARROLLO COMPUTACIONAL DE FÁRMACOS
 
 Para el desarrollo de este proyecto me baso en la relación cuantitativa estructura-actividad (Quantitative structure-activity relationship, QSAR). Esto quiere decir que la estructura  química de los compuestos se correlaciona cuantitativamente con la actividad biológica. La actividad biológica es define como la unión de un fármaco con un receptor ( proteína, organismo …)   Permite entender el origen biológico de la actividad e interpretar los modelos QSAR tiene un gran valor e importancia en el desarrollo y diseño de nuevos fármacos
 
-1.SELECCIONAR LOS DATOS Y PRE-PROCESADO
+SELECCIONAR LOS DATOS Y PRE-PROCESADO
 
 •	Base de datos ChEMBL
 
@@ -36,7 +36,7 @@ Los datos de bioactividad son valores IC50 (Concentración para la inhibición d
 
 
 
-2. ANÁLISIS EXPLORATORIO DE LOS DATOS
+ANÁLISIS EXPLORATORIO DE LOS DATOS
 
 En esta sección calculo los descriptores  de Lipinski y hago un análisis exploratorio de los datos.
 
@@ -68,6 +68,6 @@ Los descriptores de Lipinski son el peso molecular (Molecular Weight, MW), la so
 •	Análisis exploratorio del espacio químico basándome en los descriptores de Lipinski calculados. 
 
 Uso la función estadística Mann-Whitney U Test función modificada de Machine Learning Mastery
-![image](https://user-images.githubusercontent.com/39902241/127727077-df53b0c0-1e3b-400e-93c3-a78808ce8f31.png)
+
 
 
