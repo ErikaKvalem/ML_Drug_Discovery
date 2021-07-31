@@ -33,7 +33,6 @@ Los datos de bioactividad son valores IC50 (Concentración para la inhibición d
 3.	Combino las 3 columnas molecue_chembl_id, canonical_smiles y standard_value  después de haber eliminado las filas duplicadas en un DataFrame y salvo esa información en bioactivity_preprocessed_data.csv
 
 
-![image](https://user-images.githubusercontent.com/39902241/127727051-0edd81c7-9ea1-4fc9-92a4-76fc7cb2fe10.png)
 
 2. ANÁLISIS EXPLORATORIO DE LOS DATOS
 
