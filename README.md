@@ -4,7 +4,7 @@ Estructura repositorio:
 
 * data: Ficheros de datos extraidos durante el proyecto y usados en las distintas fases
 
-* results: Ficheros de resultados extraidos tras los cálculos en el proyecto
+* acetylcholinesterase_results: Ficheros de resultados extraidos tras los cálculos en el proyecto
 
 * images: Ficheros .jpg y .pdf de. gráficos extraidos tras los cálculos en el proyecto
 
