@@ -3,11 +3,16 @@ PROYECTO DE BIOINFORMÁTICA Y MACHINE LEARNING – DESARROLLO COMPUTACIONAL DE F
 
 Estructura repositorio:
 data: Ficheros de datos extraidos durante el proyecto y usados en las distintas fases
+
 results: Ficheros de resultados extraidos tras los cálculos en el proyecto
+
 images: Ficheros .jpg y .pdf de. gráficos extraidos tras los cálculos en el proyecto
+
 Código Python Jupyter notebook: Acetylcholinesterase_Machine_Learning_Project_DS_Second_Task_.ipynb
-Power point presentation: 
-Resumen documento pdf: 
+
+Power point presentation: PPT_DD_SecondTask_ErikaKvalemSoto.pptx
+
+Resumen documento pdf: Proyecto de bioinformatica.pdf
 
 
 Para el desarrollo de este proyecto me baso en la relación cuantitativa estructura-actividad (Quantitative structure-activity relationship, QSAR). Esto quiere decir que la estructura  química de los compuestos se correlaciona cuantitativamente con la actividad biológica. La actividad biológica es define como la unión de un fármaco con un receptor ( proteína, organismo …)   Permite entender el origen biológico de la actividad e interpretar los modelos QSAR tiene un gran valor e importancia en el desarrollo y diseño de nuevos fármacos
